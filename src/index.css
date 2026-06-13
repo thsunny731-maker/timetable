@@ -1,4 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
 
 :root {
   --chalk-white: #f4f4f0;
@@ -16,7 +77,7 @@
 }
 
 body {
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Paperozi', sans-serif;
   background-color: var(--chalkboard-bg);
   background-image: radial-gradient(circle, transparent 20%, #1a3220 150%);
   color: var(--chalk-white);
@@ -24,7 +85,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 34px;
   overflow: hidden;
 }
 
@@ -136,8 +197,8 @@ h1, h2, h3 {
   border: none;
   border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
   color: var(--chalk-white);
-  font-family: 'Nanum Pen Script', cursive;
-  font-size: 24px;
+  font-family: 'Paperozi', sans-serif;
+  font-size: 34px;
   padding: 5px;
   margin: 10px 0;
   outline: none;
@@ -153,8 +214,8 @@ h1, h2, h3 {
   background: transparent;
   border: 2px solid var(--chalk-white);
   color: var(--chalk-white);
-  font-family: 'Nanum Pen Script', cursive;
-  font-size: 24px;
+  font-family: 'Paperozi', sans-serif;
+  font-size: 34px;
   padding: 10px 20px;
   margin: 10px;
   border-radius: 5px;
