@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+:root {
+  --chalk-white: #f4f4f0;
+  --chalk-yellow: #ffd54f;
+  --chalk-pink: #ff8a65;
+  --chalk-blue: #64b5f6;
+  --chalkboard-bg: #2b4f35;
+  --chalkboard-border: #1a3220;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nanum Pen Script', cursive;
+  background-color: var(--chalkboard-bg);
+  background-image: radial-gradient(circle, transparent 20%, #1a3220 150%);
+  color: var(--chalk-white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  overflow: hidden;
+}
+
+/* Chalkboard Frame Container */
+.app-container {
+  width: 95vw;
+  height: 95vh;
+  background: var(--chalkboard-bg);
+  border: 15px solid #5d4037;
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  position: relative;
+}
+
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.time-display {
+  font-size: 3rem;
+  color: var(--chalk-yellow);
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Scrollbar styling for a chalk feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05); 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2); 
+  border-radius: 10px;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: var(--chalkboard-bg);
+  border: 10px solid #5d4037;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Chalk Text Effect */
+.chalk-text {
+  color: var(--chalk-white);
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.5);
+}
+
+.chalk-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+  color: var(--chalk-white);
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 24px;
+  padding: 5px;
+  margin: 10px 0;
+  outline: none;
+  width: 100%;
+  text-align: center;
+}
+
+.chalk-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.chalk-button {
+  background: transparent;
+  border: 2px solid var(--chalk-white);
+  color: var(--chalk-white);
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chalk-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* Hidden Lock Icon */
+.lock-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.1;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.lock-icon:hover {
+  opacity: 0.5;
+}
+
+/* Timetable Highlight */
+.current-period {
+  background: rgba(255, 213, 79, 0.15);
+  border: 2px dashed var(--chalk-yellow);
+  border-radius: 8px;
+  transform: scale(1.02);
+  transition: all 0.3s;
+}
