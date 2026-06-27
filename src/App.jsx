@@ -6,7 +6,7 @@ import TodoList from './components/TodoList';
 import TeacherModeModal from './components/TeacherModeModal';
 import TeacherDashboard from './components/TeacherDashboard';
 import NotificationModal from './components/NotificationModal';
-
+import EthicsGate from './components/EthicsGate';
 // 기본 시간표 데이터
 const defaultTimetable = [
   { id: 1, name: '아침 활동', startTime: '08:40', endTime: '09:00' },
@@ -30,6 +30,7 @@ function App() {
   const [showTeacherModal, setShowTeacherModal] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMsg, setNotificationMsg] = useState("");
+  const [isEthicsAgreed, setIsEthicsAgreed] = useState(false);
 
   // 로컬 스토리지에서 데이터 불러오기
   useEffect(() => {
@@ -79,6 +80,10 @@ function App() {
     localStorage.setItem('timetable', JSON.stringify(newTimetable));
     localStorage.setItem('todos', JSON.stringify(newTodos));
   };
+
+  if (!isEthicsAgreed) {
+    return <EthicsGate onAgreed={() => setIsEthicsAgreed(true)} />;
+  }
 
   return (
     <div className="app-container">

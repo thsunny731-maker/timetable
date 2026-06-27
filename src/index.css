@@ -250,3 +250,140 @@ h1, h2, h3 {
   transform: scale(1.02);
   transition: all 0.3s;
 }
+
+/* Ethics Gate Styles */
+.ethics-gate-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--chalkboard-bg);
+  background-image: radial-gradient(circle, transparent 20%, #1a3220 150%);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  overflow-y: auto;
+  align-items: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.ethics-gate-content {
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+.ethics-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.ethics-subtitle {
+  text-align: center;
+  color: var(--chalk-yellow);
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.guides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guide-card {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.guide-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+  flex-shrink: 0;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.guide-text {
+  flex: 1;
+}
+
+.guide-heading {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  color: var(--chalk-white);
+}
+
+.guide-number {
+  font-size: 1rem;
+  color: var(--chalk-yellow);
+  margin-bottom: 5px;
+}
+
+.guide-description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ethics-gate-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, var(--chalkboard-bg) 70%, transparent);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.agree-button {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--chalk-yellow);
+  color: var(--chalkboard-bg);
+  border: none;
+  padding: 20px 40px;
+  font-size: 1.8rem;
+  font-family: 'Paperozi', sans-serif;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s;
+}
+
+.agree-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+  background-color: #ffe082;
+}
+
+.agree-button:active {
+  transform: scale(0.98);
+}
+
