@@ -9,8 +9,8 @@ import NotificationModal from './components/NotificationModal';
 import EthicsGate from './components/EthicsGate';
 import PolicyModal from './components/PolicyModal';
 
-import privacyPolicyRaw from '../../개인정보처리방침.md?raw';
-import termsOfServiceRaw from '../../이용약관.md?raw';
+import privacyPolicyRaw from './assets/docs/개인정보처리방침.md?raw';
+import termsOfServiceRaw from './assets/docs/이용약관.md?raw';
 // 기본 시간표 데이터
 const defaultTimetable = [
   { id: 1, name: '아침 활동', startTime: '08:40', endTime: '09:00' },
