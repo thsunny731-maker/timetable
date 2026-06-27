@@ -387,3 +387,108 @@ h1, h2, h3 {
   transform: scale(0.98);
 }
 
+/* Footer Styles */
+.app-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  text-decoration: underline;
+  margin: 0 5px;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--chalk-white);
+}
+
+/* Policy Modal Styles */
+.policy-modal-overlay {
+  z-index: 3000; /* Above everything */
+}
+
+.policy-modal-content {
+  max-width: 800px;
+  width: 95%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.policy-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.policy-modal-header h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.policy-modal-header .close-button {
+  background: none;
+  border: none;
+  color: var(--chalk-white);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.policy-modal-header .close-button:hover {
+  opacity: 1;
+}
+
+.policy-modal-body {
+  padding: 30px;
+  overflow-y: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.policy-modal-body h1, 
+.policy-modal-body h2, 
+.policy-modal-body h3 {
+  color: var(--chalk-yellow);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.policy-modal-body h1 { font-size: 1.8rem; }
+.policy-modal-body h2 { font-size: 1.5rem; }
+.policy-modal-body h3 { font-size: 1.3rem; }
+
+.policy-modal-body p {
+  margin-bottom: 15px;
+}
+
+.policy-modal-body ul, 
+.policy-modal-body ol {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.policy-modal-body li {
+  margin-bottom: 5px;
+}
+

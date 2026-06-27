@@ -7,6 +7,10 @@ import TeacherModeModal from './components/TeacherModeModal';
 import TeacherDashboard from './components/TeacherDashboard';
 import NotificationModal from './components/NotificationModal';
 import EthicsGate from './components/EthicsGate';
+import PolicyModal from './components/PolicyModal';
+
+import privacyPolicyRaw from '../../개인정보처리방침.md?raw';
+import termsOfServiceRaw from '../../이용약관.md?raw';
 // 기본 시간표 데이터
 const defaultTimetable = [
   { id: 1, name: '아침 활동', startTime: '08:40', endTime: '09:00' },
@@ -31,6 +35,7 @@ function App() {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMsg, setNotificationMsg] = useState("");
   const [isEthicsAgreed, setIsEthicsAgreed] = useState(false);
+  const [activePolicy, setActivePolicy] = useState(null);
 
   // 로컬 스토리지에서 데이터 불러오기
   useEffect(() => {
@@ -137,6 +142,30 @@ function App() {
         <NotificationModal 
           message={notificationMsg}
           onClose={() => setShowNotification(false)}
+        />
+      )}
+
+      {/* 푸터 (약관 및 저작권 정보) */}
+      <footer className="app-footer">
+        © 2026 우리반 시간표. All rights reserved. | 
+        <button onClick={() => setActivePolicy('terms')} className="footer-link">이용약관</button> | 
+        <button onClick={() => setActivePolicy('privacy')} className="footer-link">개인정보처리방침</button> | 
+        정보관리책임자: 김혜선 교사 (서울송례초등학교)
+      </footer>
+
+      {/* 정책 모달 */}
+      {activePolicy === 'terms' && (
+        <PolicyModal 
+          title="이용약관"
+          markdownContent={termsOfServiceRaw}
+          onClose={() => setActivePolicy(null)}
+        />
+      )}
+      {activePolicy === 'privacy' && (
+        <PolicyModal 
+          title="개인정보처리방침"
+          markdownContent={privacyPolicyRaw}
+          onClose={() => setActivePolicy(null)}
         />
       )}
     </div>
